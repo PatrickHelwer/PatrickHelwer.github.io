@@ -1,10 +1,125 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Patrick Helwer</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <p>Test</p>
-  </body>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrick Helwer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      line-height: 1.6;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    .project {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .project img {
+      width: 50%;
+      border-radius: 6px;
+    }
+    .extra {
+      display: none;
+      margin-top: 15px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #555;
+    }
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 14px;
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projekte</h1>
+  </header>
+
+  <!-- Tastatur -->
+  <section class="project">
+    <h2>Tastatur</h2>
+    <h4>September 2025</h4>
+    <p>Ich habe mir eine mechanische Tastatur gebaut.</p>
+    <img src="pictures\Tastatur\fin_top.jpg" alt="Project 1">
+    <div class="extra">
+      <p>Nachdem ich bereits erfahrung mit einem Macro-Pad gesammelt habe, habe ich mich entschieden, Tastatur zu bauen.
+        Dafür braucht man Grundsätzlich eine Gehäuse und eine Platte, in welche man die Switches einsetzt. Beim Gehäuse habe ich mich für Holz (Eiche) entschieden. Das sieht einerseits schick aus, ist aber auch gut mit meiner CNC-Fräse zu bearbeiten. Die Platte besteht aus Aluminium.
+      </p>
+      <img src="pictures/Tastatur/case.jpg" alt="More Project 1">
+      <img src="pictures/Tastatur/plate_top.jpg">
+      <img src="pictures/Tastatur/plate_lot.jpg">
+      <p>In die Platte werden die Switches erstmal nur gesteckt. Um eine funktionierende Tastatur zu bauen, beginnt dann das Löten. Die Reihen werden jeweils über Dioden miteinander verbunden. Die Dioden sind nötig, um das sogenannte "Ghosting" zu verhindern, also dafür zu sorgen, dass auch bei mehreren gleichzeitig gedrückten Tasten keine Probleme auftreten. Dann werden noch alle Spalten verbunden, um so eine Matrix zu erhalten. Als Letztes muss jede Spalte und jede Reihe mit dem Microcontroller verbunden werden. </p>
+      <img src="pictures/Tastatur/back.jpg">
+      <img src="pictures/Tastatur/fin_diag.jpg">
+      <p>Mit dem Endergebnis bin ich zufrieden. Das Tippen auf der Tastatur ist angenehm und auch optisch bin ich zufrieden. Das einzige kleine Problem für mich ist die Höhe, was sich jedoch mit einer Handgelenkablage lösen lassen sollte.</p>
+    </div>
+    <button onclick="toggleExtra(this)">Read More</button>
+  </section>
+
+  <!-- Project 2 -->
+  <section class="project">
+    <h2>Project 2</h2>
+    <p>Short description of Project 2 goes here.</p>
+    <img src="pictures/project2.jpg" alt="Project 2">
+    <div class="extra">
+      <p>Here is more detail about Project 2 with more text and images.</p>
+      <img src="pictures/project2-extra.jpg" alt="More Project 2">
+    </div>
+    <button onclick="toggleExtra(this)">Read More</button>
+  </section>
+
+  <script>
+    function toggleExtra(button) {
+      const extra = button.parentElement.querySelector('.extra');
+      if (extra.style.display === "block") {
+        extra.style.display = "none";
+        button.textContent = "Read More";
+      } else {
+        extra.style.display = "block";
+        button.textContent = "Read Less";
+      }
+    }
+  </script>
+</body>
+<footer>
+    <p>Patrick Helwer</p>
+    <p>Amselweg 62, 64295 Darmstadt</p>
+    <p>patrickhelwer@gmail.com</p>
+</footer>
 </html>
