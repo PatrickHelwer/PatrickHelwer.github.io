@@ -27,7 +27,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .project img {
-      width: 50%;
+      width: 60%;
       border-radius: 6px;
     }
     .extra {
@@ -36,12 +36,16 @@
     }
     button {
       margin-top: 10px;
-      padding: 10px 15px;
+      padding: 15px ;
       border: none;
       background: #333;
       color: #fff;
       border-radius: 4px;
       cursor: pointer;
+    }
+    .project button {
+      display: block;
+      margin: 0px;
     }
     button:hover {
       background: #555;
@@ -64,9 +68,32 @@
     footer a:hover {
         text-decoration: underline;
     }
+
+    .image-row {
+        display: flex;
+        justify-content: center; /* centers them horizontally */
+        gap: 10px;               /* spacing between images */
+        flex-wrap: wrap;         /* allows wrapping on smaller screens */
+    }
+
+    .image-row img {
+        max-width: 46%;              /* adjust percentage */
+        height:auto;
+        object-fit:contain;
+        border-radius: 6px;
+    }
   </style>
 </head>
 <body>
+     <!-- About Me -->
+   <header>  
+     <h1>Über mich</h1>
+    </header> 
+  <section class="project">
+    
+    <p>Hallo, ich bin Patrick. Aktuell studiere ich an der TU Darmstadt Maschinenbau. Hier dokumentiere ich ein paar meiner Projekte in der Werkstatt.</p>
+  </section>
+
   <header>
     <h1>Projekte</h1>
   </header>
@@ -81,12 +108,16 @@
       <p>Nachdem ich bereits erfahrung mit einem Macro-Pad gesammelt habe, habe ich mich entschieden, Tastatur zu bauen.
         Dafür braucht man Grundsätzlich eine Gehäuse und eine Platte, in welche man die Switches einsetzt. Beim Gehäuse habe ich mich für Holz (Eiche) entschieden. Das sieht einerseits schick aus, ist aber auch gut mit meiner CNC-Fräse zu bearbeiten. Die Platte besteht aus Aluminium.
       </p>
-      <img src="pictures/Tastatur/case.jpg" alt="More Project 1">
-      <img src="pictures/Tastatur/plate_top.jpg">
-      <img src="pictures/Tastatur/plate_lot.jpg">
+        <div class="image-row">
+            <img src="pictures/Tastatur/case.jpg" alt="More Project 1">
+            <img src="pictures/Tastatur/plate_top.jpg">
+            <img src="pictures/Tastatur/plate_lot.jpg">
+        </div>
       <p>In die Platte werden die Switches erstmal nur gesteckt. Um eine funktionierende Tastatur zu bauen, beginnt dann das Löten. Die Reihen werden jeweils über Dioden miteinander verbunden. Die Dioden sind nötig, um das sogenannte "Ghosting" zu verhindern, also dafür zu sorgen, dass auch bei mehreren gleichzeitig gedrückten Tasten keine Probleme auftreten. Dann werden noch alle Spalten verbunden, um so eine Matrix zu erhalten. Als Letztes muss jede Spalte und jede Reihe mit dem Microcontroller verbunden werden. </p>
-      <img src="pictures/Tastatur/back.jpg">
-      <img src="pictures/Tastatur/fin_diag.jpg">
+      <div class="image-row">
+        <img src="pictures/Tastatur/back.jpg">
+        <img src="pictures/Tastatur/fin_diag.jpg">
+      </div>
       <p>Mit dem Endergebnis bin ich zufrieden. Das Tippen auf der Tastatur ist angenehm und auch optisch bin ich zufrieden. Das einzige kleine Problem für mich ist die Höhe, was sich jedoch mit einer Handgelenkablage lösen lassen sollte.</p>
     </div>
     <button onclick="toggleExtra(this)">Read More</button>
@@ -94,15 +125,51 @@
 
   <!-- Project 2 -->
   <section class="project">
-    <h2>Project 2</h2>
-    <p>Short description of Project 2 goes here.</p>
-    <img src="pictures/project2.jpg" alt="Project 2">
+    <h2>3D Drucker</h2>
+    <h4>April 2025</h4>
+    <p>Ich habe einen eigenen, schnellen 3D-Drucker gebaut.</p>
+    <img src="pictures/3D-Drucker/printing_2.jpg" alt="Project 2">
     <div class="extra">
-      <p>Here is more detail about Project 2 with more text and images.</p>
-      <img src="pictures/project2-extra.jpg" alt="More Project 2">
+      <p>Nachdem ich schon mehrere Jahre einen Ender 3 benutzt habe, habe ich mich entschieden selbst einen 3D-Drucker zu konstruieren und zu bauen. Als Basis hat dafür ein Voron 0.2 gedient, den ich jedoch ziemlich weitlaufend bearbeitet habe. Das Gantry und der Toolhead sind die größten Überschneidungen mit dem Design von Voron. Mein Design besteht jedoch hauptsächlich aus Aluminium, welches ich auf meiner CNC-Fräse gefräst habe.</p>
+      <div class="image-row">
+        <img src="pictures/3D-Drucker/Gefräßte_Teile.jpg">
+        <img src="pictures/3D-Drucker/rohbau.jpg">
+      </div>
+      <p>Nachdem ich alle Teile gefräst und 3D-gedruckt waren, habe ich die Mechanik zusammengebaut. Damit war der erste Teil geschafft. Die Elektronik war für mich der schwierigere, aber vor allem auch aufwändigere Teil. Nachdem ich dann auch noch die Firmware (Klipper) angepasst habe, hatte ich einen funktionierenden 3D-Drucker. Unten zu sehen ist das erste Benchy, dass ich in unter 10 Minuten gedruckt habe. Inzwischen habe ich auch input shaping hinzugefügt, wodurch die Druckqualität deutlich gestiegen ist. </p>
+      <div class="image-row"> 
+        <img src="pictures/3D-Drucker/printing_1.jpg">
+        <img src="pictures/3D-Drucker/printing_2.jpg">
+        <img src="pictures/3D-Drucker/benchy.jpg">
+      </div>
     </div>
     <button onclick="toggleExtra(this)">Read More</button>
   </section>
+
+  <!-- Project 3 -->
+  <section class="project">
+    <h2>Bohrmaschine</h2>
+    <h4>Oktober 2024</h4>
+    <p>Ich habe eine alte Bohrmaschine restauriert.</p>
+    <img src="pictures/Bohrmaschine/fertig diag.jpg" alt="Project 2">
+    <div class="extra">
+      <p>Da ich gerne mit alten, robusten Maschinen arbeite und bisher noch keine Tischbohrmaschine hatte, hatte ich mich entschieden eine alte Flott TB6/II zu kaufen. Die Maschine war grundsätzlich nicht in schlechtem Zustand, aber besonders die Lackierung war nicht mehr schön. Außerdem war der Motor recht laut, da die Kugellager nicht mehr in gutem Zustand waren.</p>
+      <div class="image-row">
+        <img src="pictures/Bohrmaschine/Ausgangszustand.jpg">
+      </div>
+      <p>Als ich die Funktion der Bohrmaschine Zuhause testen wollte, ist erstmal die Sicherung rausgeflogen. Beim Betrachten der Verkabelung des Motors, habe ich dann gesehen, dass die Erdung und der Neutralleiter miteinander verbunden sind, was natürlich die Sicherung auslöst. Nachdem das behoben war, hat alles funktioniert. Danach konnte ich damit anfangen, Alles auseinanderzubauen. Dann habe ich die Kugellager im Motor getauscht, alle Teile gereinigt und vom alten Lack befreit. Den Deckel habe ich dabei aus Zeitgründen ignoriert und das Motorgehäuse, da ich nicht die Windungen ausbauen wollte. Für den neuen Lack hatte ich mich für ein klassisches Grün entschieden. </p>
+      <div class="image-row"> 
+        <img src="pictures/Bohrmaschine/montagefehler.jpg">
+      </div>
+      <p> Neben ein paar kleinen Fehler bei der Montage ist dabei alles gut gelaufen.</p>
+       <div class="image-row"> 
+        <img src="pictures/Bohrmaschine/fertig diag.jpg">
+        <img src="pictures/Bohrmaschine/fertig hinten .jpg">
+        <img src="pictures/Bohrmaschine/fertig vorne.jpg">
+      </div>
+    </div>
+    <button onclick="toggleExtra(this)">Read More</button>
+  </section>
+
 
   <script>
     function toggleExtra(button) {
